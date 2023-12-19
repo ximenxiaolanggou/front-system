@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+        .container {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        .container .container-img {
+            cursor: move;
+            position: relative;
+        }
+        .container .container-img img {
+            width: 400px;
+        }
+
+        .img-nav {
+            height: 60px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .img-nav img {
+            width: 68px;
+            vertical-align: bottom;
+        }
+
+        ul li {
+            border: 2px solid transparent;
+        }
+
+        .active {
+            border: 2px solid palegreen;
+        }
+
+        .sub-img {
+            display: none;
+            top: 0;
+            left: 410px;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            background-size: 800px 800px;
+            background-image: url("../06_JavaScript_WebApis/07_JS_案例/images/1.jpg");
+            background-repeat: no-repeat;
+        }
+        .main-img-layer {
+            display: none;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-img">
+            <div class="main-img">
+                <img src="../06_JavaScript_WebApis/07_JS_案例/images/1.jpg" alt="">
+            </div>
+            <div class="sub-img">
+                <img src="" alt="">
+            </div>
+            <div class="main-img-layer"></div>
+        </div>
+        <ul class="img-nav">
+        </ul>
+    </div>
+
+<script>
+    const images = [
+        {seq: 1, url: '../06_JavaScript_WebApis/07_JS_案例/images/1.jpg'},
+        {seq: 2, url: '../06_JavaScript_WebApis/07_JS_案例/images/2.jpg'},
+        {seq: 3, url: '../06_JavaScript_WebApis/07_JS_案例/images/3.jpg'},
+        {seq: 4, url: '../06_JavaScript_WebApis/07_JS_案例/images/4.jpg'},
+        {seq: 5, url: '../06_JavaScript_WebApis/07_JS_案例/images/5.jpg'},
+    ]
+    const ulDOMObj = document.querySelector('.img-nav')
+    const containerImgDOMObj = document.querySelector('.container-img')
+    const mainImgDOMObj = document.querySelector('.container-img img')
+    const subImgDOMObj = document.querySelector('.sub-img')
+
+    for (let i = 0; i < images.length; i++) {
+        const liDOM = document.createElement('li')
+        const imgDOM = document.createElement('img')
+        imgDOM.src = images[i].url
+        liDOM.appendChild(imgDOM)
+        ulDOMObj.appendChild(liDOM)
+    }
+
+    // 根据对线渲染DOM
+    ulDOMObj.addEventListener('mouseover', function (e) {
+        if(e.target.tagName === 'IMG') {
+            const activeDOM = ulDOMObj.querySelector('.active')
+
+            // 设置边框颜色
+            if(activeDOM) activeDOM.classList.remove('active')
+            e.target.parentNode.className = 'active'
+
+            // 设置大图
+            mainImgDOMObj.src =  e.target.src
+            subImgDOMObj.style.backgroundImage = `url("${e.target.src}")`
+        }
+    })
+    let timer = 0
+
+    // 显示放大镜盒子
+    containerImgDOMObj.addEventListener('mouseenter', function (e) {
+        clearInterval(timer)
+        subImgDOMObj.style.display = 'block'
+    })
+
+    // 隐藏放大镜盒子
+    containerImgDOMObj.addEventListener('mouseleave', function (e) {
+        timer = setInterval(function () {
+            subImgDOMObj.style.display = 'none'
+        }, 200)
+    })
+
+    // 鼠标放在放大镜图片上时 放大镜图片不会消失
+    subImgDOMObj.addEventListener('mouseenter', function (e) {
+        clearInterval(timer)
+        subImgDOMObj.style.display = 'block'
+    })
+
+    // 鼠标离开放大镜图片上时 放大镜图片消失
+    subImgDOMObj.addEventListener('mouseleave', function (e) {
+        timer = setInterval(function () {subImgDOMObj.style.display = 'none'}, 200)
+    })
+
+    // 显示主图 遮罩层
+    containerImgDOMObj.addEventListener('mouseenter', function (e) {
+        document.querySelector('.main-img-layer').style.display = 'block'
+    })
+
+    // 隐藏主图 遮罩层
+    containerImgDOMObj.addEventListener('mouseleave', function (e) {
+        document.querySelector('.main-img-layer').style.display = 'none'
+    })
+
+    // 主图移入事件
+    containerImgDOMObj.addEventListener('mousemove',function (e) {
+        const mainImgLayerDOMObj = document.querySelector('.main-img-layer')
+        const mainImgLayerDOMRect = document.querySelector('.container-img').getBoundingClientRect()
+        const offX = e.pageX - mainImgLayerDOMRect.left
+        const offY = e.pageY - mainImgLayerDOMRect.top - document.documentElement.scrollTop
+        console.log(offY)
+
+        mainImgLayerDOMObj.style.left = ((offX <= 100) ? 0 : (offX >= 300) ? 200 : (offX - 100)) + 'px'
+
+        mainImgLayerDOMObj.style.top = ((offY <= 100) ? 0 : (offY >= 300) ? 200 : (offY - 100)) + 'px'
+
+        subImgDOMObj.style.backgroundPositionX = (- (((offX <= 100) ? 0 : (offX >= 300) ? 200 : (offX - 100))) * 2) + 'px'
+        subImgDOMObj.style.backgroundPositionY = (- (((offY <= 100) ? 0 : (offY >= 300) ? 200 : (offY - 100))) * 2) + 'px'
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            text-align: center;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+        table,th,td {
+            border: 1px solid black;
+        }
+        th,td {
+            padding: 10px;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const product_name = prompt('请输入商品名称')
+    const product_price = +prompt('请输入商品价格')
+    const product_num = +prompt('请输入购买数量')
+    const address = prompt('请输入收货地址')
+    document.write(`
+        <table>
+        <caption>订单确认</caption>
+        <thead>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收获地址</th>
+        </thead>
+        <tbody>
+            <td>${product_name}</td>
+            <td>${product_price}元</td>
+            <td>${product_num}</td>
+            <td>${product_price * product_num}元</td>
+            <td>${address}</td>
+        </tbody>
+    </table>
+    `)
+</script>
+</body>
+</html>

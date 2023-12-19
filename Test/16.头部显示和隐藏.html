@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 3000px;
+        }
+        .header {
+            height: 100px;
+            width: 100%;
+            background-color: pink;
+            font: 30px bold;
+            line-height: 100px;
+            text-align: center;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            transition: all .3s;
+        }
+        .main {
+            width: 960px;
+            height: 3000px;
+            background-color: skyblue;
+            margin: 0px auto;
+            overflow: hidden;
+        }
+        .hot {
+            margin-top:500px;
+            width: 300px;
+            height: 300px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">我是头部</div>
+    <div class="main">
+        <div class="hot"></div>
+    </div>
+
+    <script>
+       const headerDOMObj = document.querySelector('.header')
+       window.addEventListener('scroll', function () {
+           const hotDomObj = document.querySelector('.hot')
+           if( document.documentElement.scrollTop >= hotDomObj.offsetTop) {
+               headerDOMObj.style.top = '-100px'
+           }else {
+               headerDOMObj.style.top = '0'
+           }
+       })
+    </script>
+</body>
+</html>

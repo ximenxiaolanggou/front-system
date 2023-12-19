@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 250px;
+            margin: 50px auto;
+        }
+        .main {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .silder {
+            margin-left: 13px;
+            margin-top: 5px;
+            border-bottom: 3px solid pink;
+            width: 30px;
+            transition: all 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div>首页</div>
+            <div>分类</div>
+            <div>设置</div>
+            <div>我的个人中心</div>
+        </div>
+        <div class="silder"></div>
+    </div>
+
+    <script>
+
+        const mainDOMObj = document.querySelector('.main')
+        const headerDOMObj = document.querySelector('.header')
+        const silderDOMObj = document.querySelector('.silder')
+        silderDOMObj.style.width =  mainDOMObj.children[0].offsetWidth + 'px'
+        mainDOMObj.addEventListener('click', function (e) {
+
+            // 由于 main 下的div之间有空格，可能会点击到main div，所以需要判断是哪个点击事件，可以使用ul li来编写就无需这么麻烦
+            if(e.target.children && e.target.children.length === 0) {
+                silderDOMObj.style.width =  e.target.offsetWidth + 'px'
+                silderDOMObj.style.transform = `translateX(${e.target.offsetLeft - silderDOMObj.offsetLeft}px)`
+            }
+        })
+
+
+       window.addEventListener('scroll', function () {
+           const hotDomObj = document.querySelector('.hot')
+           if( document.documentElement.scrollTop >= hotDomObj.offsetTop) {
+               headerDOMObj.style.top = '-100px'
+           }else {
+               headerDOMObj.style.top = '0'
+           }
+       })
+    </script>
+</body>
+</html>

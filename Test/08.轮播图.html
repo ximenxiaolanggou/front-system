@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .warper {
+            margin: 50px auto;
+            width: 560px;
+            height: 400px;
+            border: 1px solid pink;
+            background-color: rgb(100, 67, 68);
+        }
+        .warper .sideshow img {
+            width: 100%;
+        }
+        .sideshow-title {
+            margin: 10px;
+            font-size: 20px;
+            color: white;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+        }
+        ul li  {
+
+            list-style-type: none;
+            margin-left: 15px;
+            background-color: white;
+            opacity: 0.4;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        ul li:first-child {
+            margin-left: 10px;
+        }
+
+        .active {
+            opacity: 1;
+            padding: 3px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="warper">
+        <div class="sideshow">
+            <img src="../06_JavaScript_WebApis/01_JS_Dom操作/images/slider01.jpg" alt="">
+        </div>
+        <div class="sideshow-title">
+            对人类来说会不会太超前了?
+        </div>
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+<script>
+    // 1. 初始数据
+    const sliderData = [
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+        { url: '../06_JavaScript_WebApis/01_JSDom操作/images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+    ]
+    let seq = 0
+    setInterval(function () {
+        seq ++
+        if(seq === sliderData.length) {
+            seq = 0
+        }
+        console.log(seq)
+        const sliderObj = sliderData[seq]
+        console.log(sliderObj)
+
+        const imgDocObj = document.querySelector('img')
+        imgDocObj.src = sliderObj.url
+
+        const titleDocObj = document.querySelector('.sideshow-title')
+        titleDocObj.innerHTML = sliderObj.title
+
+        let doc = document.querySelector('ul .active').classList.remove('active')
+        document.querySelector(`ul li:nth-child(${seq + 1})`).classList.add('active')
+
+    },1000)
+</script>
+</body>
+</html>

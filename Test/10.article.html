@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        textarea {
+            width: 500px;
+            height: 100px;
+            transition: all 0.3s;
+        }
+        textarea:focus {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+  <textarea></textarea>
+
+<script>
+    document.body.addEventListener('keyup', function (e) {
+        console.log(e.key)
+    })
+</script>
+</body>
+</html>

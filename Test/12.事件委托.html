@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            background-color: pink;
+        }
+
+        ul li {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+  <ul>
+    <li>第一行内容</li>
+    <li>第二行内容</li>
+    <li>第三行内容</li>
+    <li>第四行内容</li>
+  </ul>
+
+    <script>
+        document.querySelector('ul').addEventListener('click', function (e) {
+            console.dir(e.target.tagName)
+        })
+    </script>
+</body>
+</html>

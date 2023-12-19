@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button disabled>我已经阅读用户协议(<span>5</span>)</button>
+<script>
+    let i
+    let time = 5
+    function updateBtnStatus() {
+        const spanDocObj = document.querySelector('span')
+        spanDocObj.innerText = -- time
+        if(time === 0 && i) {
+            clearInterval(i)
+            const buttonDocObj = document.querySelector('button')
+            buttonDocObj.disabled = false
+        }
+    }
+    i = setInterval(updateBtnStatus, 1000)
+</script>
+</body>
+</html>
