@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05. 布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .container {
+            width: 1000px;
+            height: 1500px;
+            margin: 20px auto;
+        }
+        .c1 {
+        }
+        .c1-1 {
+            width: 700px;
+            height: 300px;
+            background-color: red;
+            float: left;
+        }
+        .c1-2 {
+            width: 280px;
+            height: 300px;
+            background-color: yellowgreen;
+            float: right;
+        }
+
+        .c2 {
+            margin-top: 20px;
+        }
+        .c2-1 {
+            height: 300px; 
+            width: 200px;
+            background-color: bisque;
+            float: left;
+        }
+        .c2-2 {
+            height: 300px; 
+            width: 360px;
+            background-color: blueviolet;
+            float: left;
+            margin-left: 20px;
+        }
+        .c2-3 {
+            height: 300px;
+            width: 400px; 
+            background-color: chocolate;
+            float: right;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+        ul li {
+            width: 190px;
+            height: 300px;
+            background-color: aqua;
+            float: left;
+            margin: 5px;
+        }
+
+        .clear::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="c1 clear">
+            <div class="c1-1"></div>
+            <div class="c1-2"></div>
+        </div>
+
+        <div class="c2 clear">
+            <div class="c2-1"></div>
+            <div class="c2-2"></div>
+            <div class="c2-3"></div>
+        </div>
+
+        <ul class="clear">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

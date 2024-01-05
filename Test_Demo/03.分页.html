@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.分页</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            background-color: lightcyan;
+            text-align: center;
+            margin-top: 50px ;
+            padding: 20px 0px;
+            font-size: 0px;
+        }
+
+        .page span {
+            border: 1px solid lightgray;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            padding: 0px 10px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0px 3px;
+        }
+
+        .page span:first-child {
+            margin-left: 0px;
+        }
+
+        .page span:last-child {
+            margin-right: 0px;
+        }
+
+        .page span:nth-child(2) {
+            background-color: coral;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <span>&lt;</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>...</span>
+        <span>100</span>
+        <span>&gt;</span>
+    </div>
+</body>
+</html>

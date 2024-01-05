@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04.Tab切换</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+          text-align: center;
+      }
+      .tab {
+          background-color: gainsboro;
+          display: inline-block;
+          margin: 10px auto;
+          padding: 5px 20px;
+          border-radius: 25px;
+      }
+
+      .tab span {
+          display: inline-block;
+          padding: 5px 20px;
+          border-radius: 20px;
+
+      }
+      .tab i {
+          display: inline-block;
+          width: 26px;
+          height: 26px;
+          vertical-align: middle;
+          margin-right: 5px;
+      }
+
+      .tab span:nth-child(1) i {
+          background: url("./images/icon.png") no-repeat left top;
+      }
+
+      .tab span:nth-child(2) i {
+          background: url("./images/icon.png") no-repeat -26px top;
+      }
+
+      .tab span:nth-child(3) i {
+          background: url("./images/icon.png") no-repeat -52px top;
+      }
+
+      .tab span:nth-child(4) i {
+          background: url("./images/icon.png") no-repeat -78px top;
+      }
+
+      .tab span:nth-child(5) i {
+          background: url("./images/icon.png") no-repeat;
+          background-position: -104px top;
+
+
+      }
+
+      .tab span:hover {
+          background-color: lightpink;
+          color: white;
+          cursor: pointer;
+      }
+      .tab span:hover i {
+          background-position-y: -26px;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+      <div class="tab">
+          <span><i></i>备孕期间</span>
+          <span><i></i>怀孕</span>
+          <span><i></i>0-1岁</span>
+          <span><i></i>1-2岁</span>
+          <span><i></i>2-3岁</span>
+      </div>
+  </div>
+</body>
+</html>
