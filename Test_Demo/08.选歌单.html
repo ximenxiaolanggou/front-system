@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 480px;
+            height: 480px;
+            margin: 50px auto;
+            background: url("./images/08/kugou-img1.jpg") no-repeat;
+            position: relative;
+        }
+
+        .header {
+            width: 200px;
+            height: 40px;
+            background-image: linear-gradient(to left, rgba(0,0,0,0.5), rgba(255,255,255,0));
+            float: right;
+        }
+        .header .earphone {
+            float: right;
+            width: 32px;
+            height: 32px;
+            margin-top: 4px;
+            font-size: 14px;
+            background-image: url("./images/08/earphone.svg") ;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: center;
+        }
+        .header .amount {
+            float: right;
+            font-size: 14px;
+            line-height: 40px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: gainsboro;
+        }
+
+        .bottom {
+            background-color: rgba(0,0,0,.4);
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            color: lightgray;
+            padding: 10px;
+        }
+
+        .bottom .title {
+            font-size: 14px;
+        }
+
+        .bottom .tip {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .play {
+            width: 36px;
+            height: 36px;
+            background-image: url("./images/08/play-button.svg");
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+            display: none;
+        }
+
+        .master-layer {
+            background-color: rgba(0,0,0, .5);
+            height: 100%;
+            z-index: 100;
+            position: relative;
+            display: none;
+        }
+
+        .container:hover .master-layer, .container:hover .play {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="container">
+      <div class="header">
+          <span class="amount">679.9万</span>
+          <span class="earphone"></span>
+      </div>
+      <div class="bottom">
+          <div class="title">乡村之旅：安静惬意与自然同在</div>
+          <div class="tip">西门小狼狗</div>
+      </div>
+      <div class="play"></div>
+      <div class="master-layer"></div>
+  </div>
+</body>
+</html>

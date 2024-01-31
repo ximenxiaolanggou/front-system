@@ -44,12 +44,12 @@ module.exports = {
     output: {
         path: isProduction ? path.resolve(__dirname, "../dist") : undefined,
         filename: isProduction
-            ? "static/js/[name].[contenthash:10].js"
+            ? "static/js/[name].[contenthash:11].js"
             : "static/js/[name].js",
         chunkFilename: isProduction
-            ? "static/js/[name].[contenthash:10].chunk.js"
+            ? "static/js/[name].[contenthash:11].chunk.js"
             : "static/js/[name].chunk.js",
-        assetModuleFilename: "static/js/[hash:10][ext][query]",
+        assetModuleFilename: "static/js/[hash:11][ext][query]",
         clean: true,
     },
     module: {
@@ -140,8 +140,8 @@ module.exports = {
         }),
         isProduction &&
         new MiniCssExtractPlugin({
-            filename: "static/css/[name].[contenthash:10].css",
-            chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
+            filename: "static/css/[name].[contenthash:11].css",
+            chunkFilename: "static/css/[name].[contenthash:11].chunk.css",
         }),
         new VueLoaderPlugin(),
         new DefinePlugin({

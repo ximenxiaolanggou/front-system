@@ -38,7 +38,7 @@ module.exports = {
             // cacheGroups: { // 组，哪些模块要打包到一个组
             //   defaultVendors: { // 组名
             //     test: /[\\/]node_modules[\\/]/, // 需要打包到一起的模块
-            //     priority: -10, // 权重（越大越高）
+            //     priority: -11, // 权重（越大越高）
             //     reuseExistingChunk: true, // 如果当前 chunk 包含已从主 bundle 中拆分出的模块，则它将被重用，而不是生成新的模块
             //   },
             //   default: { // 其他没有写的配置会使用上面的默认值

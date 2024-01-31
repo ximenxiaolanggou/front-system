@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 800px;
+            margin: 50px auto;
+        }
+
+        table {
+            width: 800px;
+            border-spacing:0;
+            border-collapse: collapse;
+        }
+        .col1 {
+            width: 60px;
+        }
+        .col2 {
+            width: 70px;
+        }
+
+        .col4 {
+            width: 125px;
+        }
+        .col5 {
+            width: 70px;
+        }
+
+        th,td {
+        }
+
+        thead tr th {
+            font-weight: 100;
+            background-color: #24b37b;
+            color: white;
+            text-align: left;
+        }
+
+        thead tr, tbody tr {
+            height: 70px;
+        }
+
+        tbody {
+            color: #c9c9c9;
+        }
+
+        thead tr th:first-child, tbody tr td:first-child {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        tbody tr:nth-child(-n + 3) td:first-child {
+            color: #e79887;
+        }
+
+        tbody tr td:nth-child(2) {
+            font-size: 12px;
+        }
+        tbody tr td:nth-child(2) img {
+            margin-left: 8px;
+        }
+
+        tbody tr td:nth-child(3) {
+            position: relative;
+        }
+
+        tbody tr td:nth-child(3) img {
+            width: 70px;
+            vertical-align: middle;
+        }
+
+        tbody tr td:nth-child(3) .song {
+            position: absolute;
+            left: 80px;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .song {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .song span {
+            color: black;
+        }
+        tbody tr:hover .song {
+            width: 240px;
+        }
+        tbody tr:hover .tool {
+            display: block;
+        }
+        .tool {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        .tool .play {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url("./images/12/icon-music.png") / c;
+        }
+
+        .tool .add {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url("./images/12/icon-music.png") 0px -80px;
+        }
+
+        .tool .share {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url("./images/12/icon-music.png") 0px -40px;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f7f7f7;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <colgroup>
+                <col span="1" class="col1">
+                <col span="1" class="col2">
+                <col span="1" class="col3">
+                <col span="1" class="col4">
+                <col span="1" class="col5">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>排行</th>
+                    <th>歌曲</th>
+                    <th>歌手</th>
+                    <th>时长</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="./images/12/up-jiantou.png" alt="">
+                        <div>158%</div>
+                    </td>
+                    <td>
+                        <img src="./images/12/music-img1.webp" alt="">
+                        <div class="song"><span>爱丫爱丫</span>《爱情是从告白开始的》电视剧插曲</div>
+                        <div class="tool">
+                            <i class="play"></i>
+                            <i class="add"></i>
+                            <i class="share"></i>
+                        </div>
+                    </td>
+                    <td>BY2</td>
+                    <td>03:51</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <img src="./images/12/up-jiantou.png" alt="">
+                        <div>138%</div>
+                    </td>
+                    <td>
+                        <img src="./images/12/music-img2.webp" alt="">
+                        <div class="song"><span>春泥(女版)</span></div>
+                        <div class="tool">
+                            <i class="play"></i>
+                            <i class="add"></i>
+                            <i class="share"></i>
+                        </div>
+                    </td>
+                    <td>旺仔小乔</td>
+                    <td>03:03</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <img src="./images/12/up-jiantou.png" alt="">
+                        <div>126%</div>
+                    </td>
+                    <td>
+                        <img src="./images/12/music-img3.webp" alt="">
+                        <div class="song"><span>孤勇者</span>《英雄联盟：双城之战》电视剧插曲</div>
+                        <div class="tool">
+                            <i class="play"></i>
+                            <i class="add"></i>
+                            <i class="share"></i>
+                        </div>
+                    </td>
+                    <td>永彬Ryan.B</td>
+                    <td>03:14</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <img src="./images/12/up-jiantou.png" alt="">
+                        <div>101%</div>
+                    </td>
+                    <td>
+                        <img src="./images/12/music-img4.webp" alt="">
+                        <div class="song"><span>最幸运的幸运</span>《余生》电视剧插曲</div>
+                        <div class="tool">
+                            <i class="play"></i>
+                            <i class="add"></i>
+                            <i class="share"></i>
+                        </div>
+                    </td>
+                    <td>张韶涵</td>
+                    <td>04:30</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <img src="./images/12/up-jiantou.png" alt="">
+                        <div>88%</div>
+                    </td>
+                    <td>
+                        <img src="./images/12/music-img5.webp" alt="">
+                        <div class="song"><span>鲛人之歌</span>(Live)《与君出相识》电视剧插曲</div>
+                        <div class="tool">
+                            <i class="play"></i>
+                            <i class="add"></i>
+                            <i class="share"></i>
+                        </div>
+                    </td>
+                    <td>杰克</td>
+                    <td>03:18</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>
+                        <img src="./images/12/up-jiantou.png" alt="">
+                        <div>66%</div>
+                    </td>
+                    <td>
+                        <img src="./images/12/music-img6.webp" alt="">
+                        <div class="song"><span>顺着风的方向</span>(Live)</div>
+                        <div class="tool">
+                            <i class="play"></i>
+                            <i class="add"></i>
+                            <i class="share"></i>
+                        </div>
+                    </td>
+                    <td>陈文非</td>
+                    <td>03:12</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>

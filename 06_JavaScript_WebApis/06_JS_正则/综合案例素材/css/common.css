@@ -67,7 +67,7 @@ pre {
 /* Text-level semantics
    ========================================================================== */
 /**
- * Remove the gray background on active links in IE 10.
+ * Remove the gray background on active links in IE 11.
  */
 a {
   background-color: transparent;
@@ -137,7 +137,7 @@ sup {
 /* Embedded content
    ========================================================================== */
 /**
- * Remove the border on images inside links in IE 10.
+ * Remove the border on images inside links in IE 11.
  */
 img {
   border-style: none;
@@ -251,15 +251,15 @@ progress {
 }
 
 /**
- * Remove the default vertical scrollbar in IE 10+.
+ * Remove the default vertical scrollbar in IE 11+.
  */
 textarea {
   overflow: auto;
 }
 
 /**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
+ * 1. Add the correct box sizing in IE 11.
+ * 2. Remove the padding in IE 11.
  */
 [type="checkbox"],
 [type="radio"] {
@@ -309,7 +309,7 @@ textarea {
 /* Interactive
    ========================================================================== */
 /*
- * Add the correct display in Edge, IE 10+, and Firefox.
+ * Add the correct display in Edge, IE 11+, and Firefox.
  */
 details {
   display: block;
@@ -325,14 +325,14 @@ summary {
 /* Misc
    ========================================================================== */
 /**
- * Add the correct display in IE 10+.
+ * Add the correct display in IE 11+.
  */
 template {
   display: none;
 }
 
 /**
- * Add the correct display in IE 10.
+ * Add the correct display in IE 11.
  */
 [hidden] {
   display: none;

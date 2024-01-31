@@ -1223,7 +1223,7 @@
       // 1. 当页面滚动大于 300像素，就显示 电梯导航
       // 2. 给页面添加滚动事件
       window.addEventListener('scroll', function () {
-        // 被卷去的头部大于 300 
+        // 被卷去的头部大于 300
         const n = document.documentElement.scrollTop
         // if (n >= 300) {
         //   elevator.style.opacity = 1
@@ -1246,21 +1246,21 @@
 
     // 第二第三都放到另外一个执行函数里面
     (function () {
-      // 2. 点击页面可以滑动 
+      // 2. 点击页面可以滑动
       const list = document.querySelector('.xtx-elevator-list')
       list.addEventListener('click', function (e) {
         // console.log(11)
         if (e.target.tagName === 'A' && e.target.dataset.name) {
-          // 排他思想  
-          // 先移除原来的类active 
+          // 排他思想
+          // 先移除原来的类active
           // 先获取这个active的对象
           const old = document.querySelector('.xtx-elevator-list .active')
           // console.log(old)
           // 判断 如果原来有active类的对象，就移除类，如果开始就没有对象，就不删除，所以不报错
           if (old) old.classList.remove('active')
-          // 当前元素添加 active 
+          // 当前元素添加 active
           e.target.classList.add('active')
-          // 获得自定义属性  new   topic 
+          // 获得自定义属性  new   topic
           // console.log(e.target.dataset.name)
           // 根据小盒子的自定义属性值 去选择 对应的大盒子
           // console.log(document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop)
@@ -1275,7 +1275,7 @@
 
       // 3. 页面滚动，可以根据大盒子选 小盒子 添加 active 类
       window.addEventListener('scroll', function () {
-        //  3.1  先移除类 
+        //  3.1  先移除类
         // 先获取这个active的对象
         const old = document.querySelector('.xtx-elevator-list .active')
         // console.log(old)
@@ -1303,7 +1303,7 @@
 
     })();
 
-      // let n = 10
+      // let n = 11
       // n = 20
   </script>
 </body>

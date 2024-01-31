@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 80%;
+            height: 60px;
+            margin: 10px auto;
+            background-color: pink;
+            text-align: center;
+        }
+
+        ul {
+            display: inline-block;
+            margin: 0px auto;
+            height: 60px;
+        }
+
+        ul li {
+            float: left;
+            height: 60px;
+            line-height: 60px;
+            padding: 0px 30px;
+            position:relative;
+        }
+
+        ul li:hover {
+            background-color: hotpink;
+        }
+
+        ul li:hover .category {
+            display: block;
+        }
+
+        .category {
+            position: absolute;
+            background-color: pink;
+            left: 50%;
+            top: 60px;
+            transform: translateX(-50%);
+            padding: 0px 50px;
+            display: none;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="clearfix">
+            <li>Redmi手机
+                <div class="category">
+                    <div>红米 12111111111111</div>
+                    <div>红米 13S</div>
+                    <div>红米 11</div>
+                    <div>红米 11s</div>
+                </div>
+            </li>
+            <li>电视机
+                <div class="category">
+                    <div>红米 12111111111111</div>
+                    <div>红米 13S</div>
+                    <div>红米 11</div>
+                    <div>红米 11s</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

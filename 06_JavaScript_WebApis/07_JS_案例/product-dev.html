@@ -687,7 +687,7 @@
       })
       // 6.移动黑色遮罩盒子
       middle.addEventListener('mousemove', function (e) {
-        // let x = 10, y = 20
+        // let x = 11, y = 20
         // console.log(11)
         // 鼠标在middle 盒子里面的坐标 = 鼠标在页面中的坐标 - middle 中等盒子的坐标
         // console.log(e.pageX)鼠标在页面中的坐标
@@ -699,7 +699,7 @@
         // 黑色遮罩移动 在 middle 盒子内 限定移动的距离
         if (x >= 0 && x <= 400 && y >= 0 && y <= 400) {
           // 黑色盒子不是一直移动的
-          // 声明2个变量 黑色盒子移动的 mx my变量 
+          // 声明2个变量 黑色盒子移动的 mx my变量
           let mx = 0, my = 0
           if (x < 100) mx = 0
           if (x >= 100 && x <= 300) mx = x - 100
@@ -711,7 +711,7 @@
 
           layer.style.left = mx + 'px'
           layer.style.top = my + 'px'
-          // 大盒子的背景图片要跟随 中等盒子移动  存在的关系是 2倍   
+          // 大盒子的背景图片要跟随 中等盒子移动  存在的关系是 2倍
           large.style.backgroundPositionX = -2 * mx + 'px'
           large.style.backgroundPositionY = -2 * my + 'px'
         }
